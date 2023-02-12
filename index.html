@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title></title>
+ <style>
+ *{
+   padding:0;
+   margin:0;
+   }
+ body{
+   background:white;
+   }
+.jieshao{
+  background:skyblue;
+  height:160px;
+  text-align:center;
+  }
+.wuhuwangzhan{
+  color:white;
+  font-size:50px;
+  font-weight:60;
+  }
+.shurukuang{
+  height:30px;
+  width:300px;
+  margin-top:30px;
+  margin-left:5px;
+  background:;
+  color:black;
+  border:10px solid #7FCCOB;
+  border-radius:10px;
+  border-color:black;
+  }
+.sousuojian{
+  color:white;
+  background:black;
+  height:30px;
+  width:45px;
+  }
+.zhuti{
+ width:350px;
+ height:150px;
+ background:red;
+ margin-left:5px;
+ margin-top:20px;
+ }
+.zhutishiyong{
+  color:white;
+  margin-left:140px;
+  }
+img{
+  width:50px;
+  height:50px;
+  margin-left:20px;
+  border-radius:10px;
+  margin-top:20px;
+  }
+.qqtx{
+  margin-left:17px;
+  }
+.huoquqqtouxiang{
+  height:450px;
+  width:350px;
+  background:blue;
+  margin-top:20px;
+  margin-left:5px
+  }
+.huoquqqtouxiang1{
+  color:white;
+  margin-left:130px;
+  }
+.huoquqqtouxiang2{
+  border:10px solid #7FCCOB;
+  border-radius:10px;
+  border-color:black;
+  width:200px;
+  height:30px;
+  margin-top:20px;
+  margin-left:55px;
+  }
+.huoquqqtouxiang3{
+  width:60px;
+  height:20px;
+  border-color:black;
+  background-color:white;
+  }
+.huoquqqtouxiang4{
+  width:300px;
+  height:300px;
+  }
+.nianlingjisuan{
+  width:350px;
+  height:250px;
+  background:green;
+  margin-top:20px;
+  margin-left:5px;
+  }
+.nianlingjisuan1{
+  color:white;
+  margin-left:130px
+  }
+.nianlingjisuan3{
+  border:10px solid #7FCCOB;
+  border-radius:10px;
+  border-color:black;
+  width:200px;
+  height:30px;
+  margin-top:20px;
+  margin-left:55px;
+  }
+.nianlingjisuan4{
+  width:60px;
+  height:20px;
+  border-color:black;
+  background-color:white;
+  }
+ </style>
+  </head>
+  <body>	
+	<div class="jieshao">
+ <br>
+ <br>
+ <br>
+ <h1 class="wuhuwangzhan">芜湖网站</h1>
+ </div>
+ <div class="sousuo">
+ <input class="shurukuang" placeholder="搜索" type="text" id="inp"/>
+ <button class="sousuojian" onclick="sousuokuai()" id="btn">搜索</button>
+ </div>
+ <div class="zhuti">
+ <h3 class="zhutishiyong">实用工具</h3>
+ <img src=""/>
+ <h6 class="qqtx">获取QQ头像</h6>
+ </div>
+ <div class="huoquqqtouxiang">
+ <h3 class="huoquqqtouxiang1">获取qq头像</h3>
+ <input class="huoquqqtouxiang2" id="qqh" type="text" placeholder="请输入qq号"/>
+ <button class="huoquqqtouxiang3" onclick="hq()">查询</button>
+ <img class="huoquqqtouxiang4" id="tx" src=""/>
+ </div>
+ <div class="nianlingjisuan">
+ <h3 class="nianlingjisuan1">年龄计算器</h3>
+ <input  class="nianlingjisuan3"id="nianlingjisuan2" placeholder="请输入年份" type="text"/>
+ <button class="nianlingjisuan4" onclick="nianling()">查询</button>
+ </div>
+ <script>
+var oInp = document.getElementById('inp');
+	    var oBtn = document.getElementById('btn');
+	
+	    oBtn.onclick = function () {
+	        Search();
+	    }
+	
+	    document.onkeydown = function () {
+	        if (event.keyCode == 20) {
+	            Search();
+	        }
+	    }
+	
+	    function Search() {
+	        var url = 'https://www.baidu.com/s?wd=' + oInp.value;
+	        window.open(url);
+	    }
+   let qq = "1001"
+   let lianjie = "http://q2.qlogo.cn/headimg_dl?dst_uin="+qq+"&spec=100"
+   let img = document.querySelector("img")
+   img.src=lianjie
+   function hq(){
+        var qq=document.getElementById("qqh").value;
+        var url="http://q2.qlogo.cn/headimg_dl?dst_uin="+qq+"&spec=100";
+        var img=document.getElementById("tx");
+        img.src=url;
+        }
+      function nianling(){
+      alert("由于技术问题所以只能用这样的方法");
+let b = prompt("输入出生年份") 
+let date = new Date()
+
+alert(date.getFullYear()-b+"岁");
+      }
+ </script>
+  </body>
+</html>
